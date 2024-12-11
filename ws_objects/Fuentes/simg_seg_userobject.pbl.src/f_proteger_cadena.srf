@@ -1,0 +1,59 @@
+﻿$PBExportHeader$f_proteger_cadena.srf
+global type f_proteger_cadena from function_object
+end type
+
+forward prototypes
+global function string f_proteger_cadena (string as_cadena, integer ai_accion)
+end prototypes
+
+global function string f_proteger_cadena (string as_cadena, integer ai_accion);String  ls_cadena, ls_nueva
+Integer li_total_long, li_fila, li_ascii
+
+ls_nueva = ''
+
+Choose Case ai_accion
+		
+	Case 1 // Proteger
+		
+		ls_cadena = Reverse(as_cadena)
+		li_total_long = len(ls_cadena)
+		
+		For li_fila = 1 To li_total_long Step 2
+			ls_nueva = ls_nueva + Mid(ls_cadena, li_fila+1, 1) + Mid(ls_cadena, li_fila, 1)
+		Next
+
+
+		ls_cadena = ls_nueva
+		ls_nueva = ''
+		li_total_long = len(ls_cadena)
+		
+		For li_fila = 1 To li_total_long
+			li_ascii = Asc(Mid(ls_cadena, li_fila, 1)) + 1
+			If li_ascii=256 Then li_ascii=32
+			ls_nueva = ls_nueva + Mid(ls_cadena, li_fila, 1) + Char(li_ascii)
+		Next
+
+		
+	Case 2 // Desproteger
+
+		ls_cadena = as_cadena
+		li_total_long = len(ls_cadena)
+		
+		For li_fila = 1 To li_total_long Step 2
+			ls_nueva = ls_nueva + Mid(ls_cadena, li_fila, 1)
+		Next
+
+		ls_cadena = ls_nueva
+		ls_nueva = ''
+		li_total_long = len(ls_cadena)
+		
+		For li_fila = 1 To li_total_long Step 2
+			ls_nueva = ls_nueva + Mid(ls_cadena, li_fila+1, 1) + Mid(ls_cadena, li_fila, 1)
+		Next
+		ls_nueva = Reverse(ls_nueva)
+		
+End Choose
+
+Return ls_nueva
+end function
+

@@ -1,0 +1,122 @@
+﻿$PBExportHeader$p_sigm.srj
+EXE:sigm_inicio.exe,,0,1,1
+CMP:0,0,0,2,0,0,1
+COM:SAP
+DES:SAP Product File
+CPY:
+PRD:PowerBuilder Enterprise Series
+PVS:1.0.0.1
+PVN:1,0,0,1
+FVS:1.0.0.1
+FVN:1,0,0,1
+MAN:0,asInvoker,0
+PBD:sigm_inicio.pbl,,1
+PBD:..\Base\appeon_workarounds.pbl,,1
+PBD:..\Base\base_auditoria.pbl,,1
+PBD:..\Base\base_configuracion.pbl,,1
+PBD:..\Base\base_dddw.pbl,,1
+PBD:..\Base\base_filtros.pbl,,1
+PBD:..\Base\base_funciones.pbl,,1
+PBD:..\Base\base_impresion.pbl,,1
+PBD:..\Base\base_login.pbl,,1
+PBD:..\Base\base_seguridad.pbl,,1
+PBD:..\Base\base_userobject.pbl,,1
+PBD:..\Base\base_userobject02.pbl,,1
+PBD:..\Base\base_workflow.pbl,,1
+PBD:..\Base\base_ftp.pbl,,1
+PBD:..\Base\base_email.pbl,,1
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,u_powerfilter_dropdown,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,w_base,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_entidadestado,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_login.pbl,w_cambiar_clave,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_historialestadoentidad,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_funciones.pbl,gf_usp_query_generico,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_flujoentidadaccion,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,uo_proc_seguridad,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_workflowrol_noseleccionado,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,w_historialestadoentidad,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_configuracion.pbl,dw_parametroaplicacion,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,u_powerfilter_monthopts,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,str_mensaje,s
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,gf_configurar_menu,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject02.pbl,m_treeview,m
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,d_powerfilter_monthopts,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,s_powerfilter_restore_parms,s
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,w_powerfilter_prompt_to_restore,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\appeon_workarounds.pbl,appeongetclientip,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_configuracion.pbl,w_parametroaplicacion,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_estadospendientes,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,gf_conectar_db,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,gf_get_device_info,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,s_powerfilter_parms,s
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,str_workflow,s
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject02.pbl,uo_generar_dw,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,w_workflow_rol_por_usuario,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\SIGMd\sigm_inicio.pbl,sigm_inicio,a
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,gf_protege_cadena,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,d_powerfilter_ddbuttons,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_impresion.pbl,w_preview,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\appeon_workarounds.pbl,eon_mobile_deviceex,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,d_powerfilter,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_rol_mantenimiento,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_login.pbl,w_login,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_funciones.pbl,gf_split,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,uo_dsbase,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_flujoentidad,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,w_workflow_definicion,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\appeon_workarounds.pbl,appeongetclienttype,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,uo_modulo,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_estados,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_email.pbl,n_winsock,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_auditoria.pbl,dw_columnas,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_usuario_listado,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,w_roles,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_funciones.pbl,gf_mensaje,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject02.pbl,str_arg,s
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_rol_simple_nosel,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,uo_dwfiltro,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_rol_simple_sel,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,d_powerfilter_customfilter,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,d_powerfilter_filteropts,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_usuariorol_seleccionado,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_auditoria.pbl,w_auditoria_historico,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_workflow,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_rol_listado,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_estadorol_noseleccionado,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,uo_transaction,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_workflowrol_seleccionado,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,w_powerfilter_custom,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,str_dispositivo,s
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\appeon_workarounds.pbl,appeonextfuncs,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,w_flujoentidadaccion,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_auditoria.pbl,dw_columna_historial,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\appeon_workarounds.pbl,str_b,s
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,w_base_tv,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,w_estados_pendientes,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,w_estados,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,n_cst_powerfilter,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,d_powerfilter_customparm,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,gf_obtener_parametros_conneccion,f
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,u_powerfilter_predeffilters,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_dddw.pbl,dddw_unidadnegocio_porusuario_filtro,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject02.pbl,w_base_response,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,uo_dwfiltro_unidadnegocio,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,d_powerfilter_pictureparm,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_email.pbl,n_smtp,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_seguridad.pbl,w_mensaje,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject02.pbl,m_detalle,m
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_estadorol_seleccionado,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_auditoria.pbl,dw_filtro_external,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_login.pbl,dw_aplicaciones,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,uo_dw,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\appeon_workarounds.pbl,str_a,s
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,uo_dwbase,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,w_principal,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_auditoria.pbl,w_auditoria_definicion,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_login.pbl,w_modulo_seleccionar,w
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\appeon_workarounds.pbl,eon_mobile_device,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_impresion.pbl,str_preview,s
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\appeon_workarounds.pbl,appeonservice,u
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_workflow.pbl,dw_usuariorol_noseleccionado,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_filtros.pbl,d_powerfilter_warn,d
+OBJ:C:\Users\marteaga\Documents\marteaga\Fuentes\Base\SIGM Base\Base\base_userobject.pbl,m_mbase,m

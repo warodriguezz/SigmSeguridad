@@ -1,0 +1,46 @@
+﻿$PBExportHeader$f_auditoria_usuario.srf
+global type f_auditoria_usuario from function_object
+end type
+
+forward prototypes
+global function integer f_auditoria_usuario (integer ai_idservidor, string as_codigousuario, string as_tipo)
+end prototypes
+
+global function integer f_auditoria_usuario (integer ai_idservidor, string as_codigousuario, string as_tipo);// **********************************************************************************//
+// Control de Versión:
+//
+// Versión 	Autor 							Fecha 				Descripción
+//	1.0																Inicial
+//	1.1		Pedro Torres				10/08/2022			Se pasa en blaco el IP para que el SP se encargue
+//  1.2		Walther Rodriguez			08/07/2024			Se elimina Id Servidor de Seguridad.usp_Usuario_Auditoria_Insert por PB2022
+// **********************************************************************************//
+String 	ls_Parametros
+String 	ls_retorno[]
+Integer	li_ret
+String		ls_Error 
+String 	ls_HostName
+String 	ls_IpAddress
+
+
+uo_winsock luo_winsock
+
+ls_HostName =   luo_winsock.of_gethostname()
+//ls_IpAddress  =  luo_winsock.of_getipaddress( ls_HostName) //PTZ 1.1
+ls_IpAddress = '' //PTZ 1.1
+
+//ls_Parametros =  "'"+gs_Usuario+"',"+string(ai_idservidor)+","+"'"+as_codigousuario+"',"+as_tipo+","+ "'"+ls_IpAddress+"',"+ "'" + ls_HostName+"',"+ "'" + gs_Aplicacion +"'" 
+ls_Parametros =  "'"+gs_Usuario+"',"+"'"+as_codigousuario+"',"+as_tipo+","+ "'"+ls_IpAddress+"',"+ "'" + ls_HostName+"',"+ "'" + gs_Aplicacion +"'" //1.2
+
+li_ret				= gf_Procedimiento_Ejecutar("Seguridad.usp_Usuario_Auditoria_Insert ",ls_Parametros,ls_retorno, ls_Error)
+
+//Solo Informar si existe problemas
+if  li_ret < 0 then
+	gf_mensaje(gs_Aplicacion, 'Revisar, no se genero la auditoria', ls_Error , 1)
+End if 
+
+Return li_ret
+
+
+
+end function
+

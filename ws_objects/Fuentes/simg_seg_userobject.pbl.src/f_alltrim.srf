@@ -1,0 +1,23 @@
+﻿$PBExportHeader$f_alltrim.srf
+global type f_alltrim from function_object
+end type
+
+forward prototypes
+global function string f_alltrim (string as_cadena)
+end prototypes
+
+global function string f_alltrim (string as_cadena);String 	ls_retorno
+long 		space
+Long 	ll_a
+
+FOR ll_a = 1 to len(as_cadena)
+		space = pos(as_cadena, " ")
+		IF space > 0 THEN
+		as_cadena= Replace(as_cadena, space, 1, "")
+		END IF
+NEXT
+	  
+ls_retorno = as_cadena
+Return ls_retorno
+end function
+

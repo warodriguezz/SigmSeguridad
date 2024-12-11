@@ -1,0 +1,2820 @@
+﻿$PBExportHeader$m_menu_seguridad.srm
+forward
+global type m_menu_seguridad from m_mbase
+end type
+type m1050_configurargraficos from menu within m10_sistema
+end type
+type m10_sistema from m_mbase`m10_sistema within m_menu_seguridad
+m1050_configurargraficos m1050_configurargraficos
+end type
+type m20_configuración from menu within m_menu_seguridad
+end type
+type m2005_servidores from menu within m20_configuración
+end type
+type m2015_accesoaservidores from menu within m20_configuración
+end type
+type m2025_basededatos from menu within m20_configuración
+end type
+type m2050_vistas from menu within m20_configuración
+end type
+type m2060_aplicaciones from menu within m20_configuración
+end type
+type m2075_perfiles from menu within m20_configuración
+end type
+type m2095_plantilladeaccesoperfil from menu within m20_configuración
+end type
+type m2096_correos from menu within m20_configuración
+end type
+type m2097_div from menu within m20_configuración
+end type
+type m2100_administraciondeusuarios from menu within m20_configuración
+end type
+type m2105_solicituddeusuarios from menu within m20_configuración
+end type
+type m20_configuración from menu within m_menu_seguridad
+m2005_servidores m2005_servidores
+m2015_accesoaservidores m2015_accesoaservidores
+m2025_basededatos m2025_basededatos
+m2050_vistas m2050_vistas
+m2060_aplicaciones m2060_aplicaciones
+m2075_perfiles m2075_perfiles
+m2095_plantilladeaccesoperfil m2095_plantilladeaccesoperfil
+m2096_correos m2096_correos
+m2097_div m2097_div
+m2100_administraciondeusuarios m2100_administraciondeusuarios
+m2105_solicituddeusuarios m2105_solicituddeusuarios
+end type
+type m30_operaciones from menu within m_menu_seguridad
+end type
+type m3005_desbloquearusuarios from menu within m30_operaciones
+end type
+type m3015_configuraciónprocesoactualizacion from menu within m30_operaciones
+end type
+type m3025_reasignaciónpermisosporbd from menu within m30_operaciones
+end type
+type m3035_plandedisponibilidad from menu within m30_operaciones
+end type
+type m30_operaciones from menu within m_menu_seguridad
+m3005_desbloquearusuarios m3005_desbloquearusuarios
+m3015_configuraciónprocesoactualizacion m3015_configuraciónprocesoactualizacion
+m3025_reasignaciónpermisosporbd m3025_reasignaciónpermisosporbd
+m3035_plandedisponibilidad m3035_plandedisponibilidad
+end type
+type m40_consultas from menu within m_menu_seguridad
+end type
+type m4010_consultadeusuarios from menu within m40_consultas
+end type
+type m4015_consultadeunidadesporusuario from menu within m40_consultas
+end type
+type m4020_consultaperfilusuarios from menu within m40_consultas
+end type
+type m4030_accesoaplicacion from menu within m40_consultas
+end type
+type m4040_accesosporaplicacionusuario from menu within m40_consultas
+end type
+type m4045_listadodesolicitudesdeusuario from menu within m40_consultas
+end type
+type m_4050div from menu within m40_consultas
+end type
+type m4060_auditoriadeiniciosdesesion from menu within m40_consultas
+end type
+type m4070_auditoriadeconfiguracionporusuario from menu within m40_consultas
+end type
+type m40_consultas from menu within m_menu_seguridad
+m4010_consultadeusuarios m4010_consultadeusuarios
+m4015_consultadeunidadesporusuario m4015_consultadeunidadesporusuario
+m4020_consultaperfilusuarios m4020_consultaperfilusuarios
+m4030_accesoaplicacion m4030_accesoaplicacion
+m4040_accesosporaplicacionusuario m4040_accesosporaplicacionusuario
+m4045_listadodesolicitudesdeusuario m4045_listadodesolicitudesdeusuario
+m_4050div m_4050div
+m4060_auditoriadeiniciosdesesion m4060_auditoriadeiniciosdesesion
+m4070_auditoriadeconfiguracionporusuario m4070_auditoriadeconfiguracionporusuario
+end type
+global type m_menu_seguridad from m_mbase
+m20_configuración m20_configuración
+m30_operaciones m30_operaciones
+m40_consultas m40_consultas
+end type
+end forward
+
+global type m_menu_seguridad from m_mbase
+m20_configuración m20_configuración
+m30_operaciones m30_operaciones
+m40_consultas m40_consultas
+end type
+global m_menu_seguridad m_menu_seguridad
+
+on m_menu_seguridad.create
+m_menu_seguridad=this
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+this.m20_configuración=create m20_configuración
+this.m30_operaciones=create m30_operaciones
+this.m40_consultas=create m40_consultas
+this.Item[UpperBound(this.Item)+1]=this.m20_configuración
+this.Item[UpperBound(this.Item)+1]=this.m30_operaciones
+this.Item[UpperBound(this.Item)+1]=this.m40_consultas
+end on
+
+on m_menu_seguridad.destroy
+call super::destroy
+destroy(this.m20_configuración)
+destroy(this.m30_operaciones)
+destroy(this.m40_consultas)
+end on
+
+type m10_sistema from m_mbase`m10_sistema within m_menu_seguridad
+m1050_configurargraficos m1050_configurargraficos
+end type
+
+on m10_sistema.create
+call super::create
+this.menutitletext = ""
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+this.m1050_configurargraficos=create m1050_configurargraficos
+this.Item[UpperBound(this.Item)+1]=this.m1050_configurargraficos
+end on
+
+on m10_sistema.destroy
+call super::destroy
+destroy(this.m1050_configurargraficos)
+end on
+
+type m1005_configuraciones from m_mbase`m1005_configuraciones within m10_sistema
+end type
+
+on m1005_configuraciones.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m1005_configuraciones.destroy
+call super::destroy
+end on
+
+type m100505_parámetroscorporativo from m_mbase`m100505_parámetroscorporativo within m1005_configuraciones
+end type
+
+on m100505_parámetroscorporativo.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m100505_parámetroscorporativo.destroy
+call super::destroy
+end on
+
+type m100506_parámetrosporunidadnegocio from m_mbase`m100506_parámetrosporunidadnegocio within m1005_configuraciones
+end type
+
+on m100506_parámetrosporunidadnegocio.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m100506_parámetrosporunidadnegocio.destroy
+call super::destroy
+end on
+
+type m1015_auditoria from m_mbase`m1015_auditoria within m10_sistema
+end type
+
+on m1015_auditoria.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m1015_auditoria.destroy
+call super::destroy
+end on
+
+type m101505_definicion_auditoria from m_mbase`m101505_definicion_auditoria within m1015_auditoria
+end type
+
+on m101505_definicion_auditoria.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m101505_definicion_auditoria.destroy
+call super::destroy
+end on
+
+type m101506_historial from m_mbase`m101506_historial within m1015_auditoria
+end type
+
+on m101506_historial.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m101506_historial.destroy
+call super::destroy
+end on
+
+type m1025_workflow from m_mbase`m1025_workflow within m10_sistema
+end type
+
+on m1025_workflow.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m1025_workflow.destroy
+call super::destroy
+end on
+
+type m102505_rol from m_mbase`m102505_rol within m1025_workflow
+end type
+
+on m102505_rol.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m102505_rol.destroy
+call super::destroy
+end on
+
+type m102515_definicion_workflow from m_mbase`m102515_definicion_workflow within m1025_workflow
+end type
+
+on m102515_definicion_workflow.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m102515_definicion_workflow.destroy
+call super::destroy
+end on
+
+type m102525_rolxusuario from m_mbase`m102525_rolxusuario within m1025_workflow
+end type
+
+on m102525_rolxusuario.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m102525_rolxusuario.destroy
+call super::destroy
+end on
+
+type m1030_div from m_mbase`m1030_div within m10_sistema
+end type
+
+on m1030_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m1030_div.destroy
+call super::destroy
+end on
+
+type m1035_impresora from m_mbase`m1035_impresora within m10_sistema
+end type
+
+on m1035_impresora.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m1035_impresora.destroy
+call super::destroy
+end on
+
+type m1040_div from m_mbase`m1040_div within m10_sistema
+end type
+
+on m1040_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m1040_div.destroy
+call super::destroy
+end on
+
+type m1042_cambiarcontrasena from m_mbase`m1042_cambiarcontrasena within m10_sistema
+end type
+
+on m1042_cambiarcontrasena.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m1042_cambiarcontrasena.destroy
+call super::destroy
+end on
+
+type m1044_div from m_mbase`m1044_div within m10_sistema
+end type
+
+on m1044_div.create
+call super::create
+this.visible = false
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m1044_div.destroy
+call super::destroy
+end on
+
+type m1045_cambiarmodulo from m_mbase`m1045_cambiarmodulo within m10_sistema
+end type
+
+on m1045_cambiarmodulo.create
+call super::create
+this.visible = false
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m1045_cambiarmodulo.destroy
+call super::destroy
+end on
+
+type m90_ventana from m_mbase`m90_ventana within m_menu_seguridad
+end type
+
+on m90_ventana.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m90_ventana.destroy
+call super::destroy
+end on
+
+type m9005_ayuda_sistema from m_mbase`m9005_ayuda_sistema within m90_ventana
+end type
+
+on m9005_ayuda_sistema.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9005_ayuda_sistema.destroy
+call super::destroy
+end on
+
+type m9006_acercade from m_mbase`m9006_acercade within m90_ventana
+end type
+
+on m9006_acercade.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9006_acercade.destroy
+call super::destroy
+end on
+
+type m9007_div from m_mbase`m9007_div within m90_ventana
+end type
+
+on m9007_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9007_div.destroy
+call super::destroy
+end on
+
+type m9010_mostrartextoenbarradeherramientas from m_mbase`m9010_mostrartextoenbarradeherramientas within m90_ventana
+end type
+
+on m9010_mostrartextoenbarradeherramientas.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9010_mostrartextoenbarradeherramientas.destroy
+call super::destroy
+end on
+
+type m9011_div from m_mbase`m9011_div within m90_ventana
+end type
+
+on m9011_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9011_div.destroy
+call super::destroy
+end on
+
+type m9020_vertical from m_mbase`m9020_vertical within m90_ventana
+end type
+
+on m9020_vertical.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9020_vertical.destroy
+call super::destroy
+end on
+
+type m9021_horizontal from m_mbase`m9021_horizontal within m90_ventana
+end type
+
+on m9021_horizontal.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9021_horizontal.destroy
+call super::destroy
+end on
+
+type m9022_cascada from m_mbase`m9022_cascada within m90_ventana
+end type
+
+on m9022_cascada.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9022_cascada.destroy
+call super::destroy
+end on
+
+type m9023_div from m_mbase`m9023_div within m90_ventana
+end type
+
+on m9023_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9023_div.destroy
+call super::destroy
+end on
+
+type m9030_activarfiltros from m_mbase`m9030_activarfiltros within m90_ventana
+end type
+
+on m9030_activarfiltros.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9030_activarfiltros.destroy
+call super::destroy
+end on
+
+type m9040_activartooltiptext from m_mbase`m9040_activartooltiptext within m90_ventana
+end type
+
+on m9040_activartooltiptext.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9040_activartooltiptext.destroy
+call super::destroy
+end on
+
+type m9050_exportar from m_mbase`m9050_exportar within m90_ventana
+end type
+
+on m9050_exportar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9050_exportar.destroy
+call super::destroy
+end on
+
+type m9060_verauditoria from m_mbase`m9060_verauditoria within m90_ventana
+end type
+
+on m9060_verauditoria.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9060_verauditoria.destroy
+call super::destroy
+end on
+
+type m95_edicion from m_mbase`m95_edicion within m_menu_seguridad
+end type
+
+on m95_edicion.create
+call super::create
+this.shifttoright = false
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m95_edicion.destroy
+call super::destroy
+end on
+
+type m9505_recuperar from m_mbase`m9505_recuperar within m95_edicion
+end type
+
+on m9505_recuperar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9505_recuperar.destroy
+call super::destroy
+end on
+
+type m9515_nuevo from m_mbase`m9515_nuevo within m95_edicion
+end type
+
+on m9515_nuevo.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9515_nuevo.destroy
+call super::destroy
+end on
+
+type m9525_abrir from m_mbase`m9525_abrir within m95_edicion
+end type
+
+on m9525_abrir.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9525_abrir.destroy
+call super::destroy
+end on
+
+type m9535_guardar from m_mbase`m9535_guardar within m95_edicion
+end type
+
+on m9535_guardar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9535_guardar.destroy
+call super::destroy
+end on
+
+type m9545_eliminar from m_mbase`m9545_eliminar within m95_edicion
+end type
+
+on m9545_eliminar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9545_eliminar.destroy
+call super::destroy
+end on
+
+type m9555_cancelar from m_mbase`m9555_cancelar within m95_edicion
+end type
+
+on m9555_cancelar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9555_cancelar.destroy
+call super::destroy
+end on
+
+type m9565_vistaprevia from m_mbase`m9565_vistaprevia within m95_edicion
+end type
+
+on m9565_vistaprevia.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9565_vistaprevia.destroy
+call super::destroy
+end on
+
+type m9566_div from m_mbase`m9566_div within m95_edicion
+end type
+
+on m9566_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9566_div.destroy
+call super::destroy
+end on
+
+type m9567_exportar from m_mbase`m9567_exportar within m95_edicion
+end type
+
+on m9567_exportar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9567_exportar.destroy
+call super::destroy
+end on
+
+type m9570_div from m_mbase`m9570_div within m95_edicion
+end type
+
+on m9570_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9570_div.destroy
+call super::destroy
+end on
+
+type m9575_workflow from m_mbase`m9575_workflow within m95_edicion
+end type
+
+on m9575_workflow.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9575_workflow.destroy
+call super::destroy
+end on
+
+type m9576_workflowhistorial from m_mbase`m9576_workflowhistorial within m95_edicion
+end type
+
+on m9576_workflowhistorial.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9576_workflowhistorial.destroy
+call super::destroy
+end on
+
+type m9580_div from m_mbase`m9580_div within m95_edicion
+end type
+
+on m9580_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9580_div.destroy
+call super::destroy
+end on
+
+type m9585_seleccionarcolumna from m_mbase`m9585_seleccionarcolumna within m95_edicion
+end type
+
+on m9585_seleccionarcolumna.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9585_seleccionarcolumna.destroy
+call super::destroy
+end on
+
+type m9586_filtrarcolumna from m_mbase`m9586_filtrarcolumna within m95_edicion
+end type
+
+on m9586_filtrarcolumna.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9586_filtrarcolumna.destroy
+call super::destroy
+end on
+
+type m9587_verauditoria from m_mbase`m9587_verauditoria within m95_edicion
+end type
+
+on m9587_verauditoria.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9587_verauditoria.destroy
+call super::destroy
+end on
+
+type m9590_div from m_mbase`m9590_div within m95_edicion
+end type
+
+on m9590_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9590_div.destroy
+call super::destroy
+end on
+
+type m9598_ayuda from m_mbase`m9598_ayuda within m95_edicion
+end type
+
+on m9598_ayuda.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9598_ayuda.destroy
+call super::destroy
+end on
+
+type m9599_cerrar from m_mbase`m9599_cerrar within m95_edicion
+end type
+
+on m9599_cerrar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9599_cerrar.destroy
+call super::destroy
+end on
+
+type m96_impresion from m_mbase`m96_impresion within m_menu_seguridad
+end type
+
+on m96_impresion.create
+call super::create
+this.shifttoright = false
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m96_impresion.destroy
+call super::destroy
+end on
+
+type m9605_paginaanterior from m_mbase`m9605_paginaanterior within m96_impresion
+end type
+
+on m9605_paginaanterior.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9605_paginaanterior.destroy
+call super::destroy
+end on
+
+type m9606_paginasiguiente from m_mbase`m9606_paginasiguiente within m96_impresion
+end type
+
+on m9606_paginasiguiente.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9606_paginasiguiente.destroy
+call super::destroy
+end on
+
+type m9610_div from m_mbase`m9610_div within m96_impresion
+end type
+
+on m9610_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9610_div.destroy
+call super::destroy
+end on
+
+type m9615_zoommenos from m_mbase`m9615_zoommenos within m96_impresion
+end type
+
+on m9615_zoommenos.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9615_zoommenos.destroy
+call super::destroy
+end on
+
+type m9616_zoommas from m_mbase`m9616_zoommas within m96_impresion
+end type
+
+on m9616_zoommas.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9616_zoommas.destroy
+call super::destroy
+end on
+
+type m9620_div from m_mbase`m9620_div within m96_impresion
+end type
+
+on m9620_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9620_div.destroy
+call super::destroy
+end on
+
+type m9625_regla from m_mbase`m9625_regla within m96_impresion
+end type
+
+on m9625_regla.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9625_regla.destroy
+call super::destroy
+end on
+
+type m9635_exportar from m_mbase`m9635_exportar within m96_impresion
+end type
+
+on m9635_exportar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9635_exportar.destroy
+call super::destroy
+end on
+
+type m9655_enviaremail from m_mbase`m9655_enviaremail within m96_impresion
+end type
+
+on m9655_enviaremail.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9655_enviaremail.destroy
+call super::destroy
+end on
+
+type m9645_imprimir from m_mbase`m9645_imprimir within m96_impresion
+end type
+
+on m9645_imprimir.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9645_imprimir.destroy
+call super::destroy
+end on
+
+type m9655_cerrar from m_mbase`m9655_cerrar within m96_impresion
+end type
+
+on m9655_cerrar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9655_cerrar.destroy
+call super::destroy
+end on
+
+type m97_detalle from m_mbase`m97_detalle within m_menu_seguridad
+end type
+
+on m97_detalle.create
+call super::create
+this.shifttoright = false
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m97_detalle.destroy
+call super::destroy
+end on
+
+type m9705_insertar from m_mbase`m9705_insertar within m97_detalle
+end type
+
+on m9705_insertar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9705_insertar.destroy
+call super::destroy
+end on
+
+type m9715_añadir from m_mbase`m9715_añadir within m97_detalle
+end type
+
+on m9715_añadir.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9715_añadir.destroy
+call super::destroy
+end on
+
+type m9725_eliminar from m_mbase`m9725_eliminar within m97_detalle
+end type
+
+on m9725_eliminar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9725_eliminar.destroy
+call super::destroy
+end on
+
+type m9735_div from m_mbase`m9735_div within m97_detalle
+end type
+
+on m9735_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9735_div.destroy
+call super::destroy
+end on
+
+type m9745_exportar from m_mbase`m9745_exportar within m97_detalle
+end type
+
+on m9745_exportar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9745_exportar.destroy
+call super::destroy
+end on
+
+type m9746_copiarcolumna from m_mbase`m9746_copiarcolumna within m97_detalle
+end type
+
+on m9746_copiarcolumna.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9746_copiarcolumna.destroy
+call super::destroy
+end on
+
+type m97461_copiarcolumnasincabecera from m_mbase`m97461_copiarcolumnasincabecera within m97_detalle
+end type
+
+on m97461_copiarcolumnasincabecera.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m97461_copiarcolumnasincabecera.destroy
+call super::destroy
+end on
+
+type m9747_copiarfila from m_mbase`m9747_copiarfila within m97_detalle
+end type
+
+on m9747_copiarfila.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9747_copiarfila.destroy
+call super::destroy
+end on
+
+type m9748_copiartodo from m_mbase`m9748_copiartodo within m97_detalle
+end type
+
+on m9748_copiartodo.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9748_copiartodo.destroy
+call super::destroy
+end on
+
+type m9749_seleccionarcolumna from m_mbase`m9749_seleccionarcolumna within m97_detalle
+end type
+
+on m9749_seleccionarcolumna.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9749_seleccionarcolumna.destroy
+call super::destroy
+end on
+
+type m9750_filtrarcolumna from m_mbase`m9750_filtrarcolumna within m97_detalle
+end type
+
+on m9750_filtrarcolumna.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9750_filtrarcolumna.destroy
+call super::destroy
+end on
+
+type m9751_verauditoria from m_mbase`m9751_verauditoria within m97_detalle
+end type
+
+on m9751_verauditoria.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9751_verauditoria.destroy
+call super::destroy
+end on
+
+type m9755_detalle_adicional from m_mbase`m9755_detalle_adicional within m97_detalle
+end type
+
+on m9755_detalle_adicional.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9755_detalle_adicional.destroy
+call super::destroy
+end on
+
+type m975501_insertar from m_mbase`m975501_insertar within m9755_detalle_adicional
+end type
+
+on m975501_insertar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975501_insertar.destroy
+call super::destroy
+end on
+
+type m975502_insertar from m_mbase`m975502_insertar within m9755_detalle_adicional
+end type
+
+on m975502_insertar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975502_insertar.destroy
+call super::destroy
+end on
+
+type m975503_eliminar from m_mbase`m975503_eliminar within m9755_detalle_adicional
+end type
+
+on m975503_eliminar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975503_eliminar.destroy
+call super::destroy
+end on
+
+type m975504_div from m_mbase`m975504_div within m9755_detalle_adicional
+end type
+
+on m975504_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975504_div.destroy
+call super::destroy
+end on
+
+type m975505_exportar from m_mbase`m975505_exportar within m9755_detalle_adicional
+end type
+
+on m975505_exportar.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975505_exportar.destroy
+call super::destroy
+end on
+
+type m975506_div from m_mbase`m975506_div within m9755_detalle_adicional
+end type
+
+on m975506_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975506_div.destroy
+call super::destroy
+end on
+
+type m975507_seleccionarcolumna from m_mbase`m975507_seleccionarcolumna within m9755_detalle_adicional
+end type
+
+on m975507_seleccionarcolumna.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975507_seleccionarcolumna.destroy
+call super::destroy
+end on
+
+type m975508_filtrarcolumna from m_mbase`m975508_filtrarcolumna within m9755_detalle_adicional
+end type
+
+on m975508_filtrarcolumna.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975508_filtrarcolumna.destroy
+call super::destroy
+end on
+
+type m975509_verauditoria from m_mbase`m975509_verauditoria within m9755_detalle_adicional
+end type
+
+on m975509_verauditoria.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975509_verauditoria.destroy
+call super::destroy
+end on
+
+type m975510_div from m_mbase`m975510_div within m9755_detalle_adicional
+end type
+
+on m975510_div.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975510_div.destroy
+call super::destroy
+end on
+
+type m975511_copiarcolumna from m_mbase`m975511_copiarcolumna within m9755_detalle_adicional
+end type
+
+on m975511_copiarcolumna.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975511_copiarcolumna.destroy
+call super::destroy
+end on
+
+type m9755111_copiarcolumnasincabecera from m_mbase`m9755111_copiarcolumnasincabecera within m9755_detalle_adicional
+end type
+
+on m9755111_copiarcolumnasincabecera.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m9755111_copiarcolumnasincabecera.destroy
+call super::destroy
+end on
+
+type m975512_copiarfila from m_mbase`m975512_copiarfila within m9755_detalle_adicional
+end type
+
+on m975512_copiarfila.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975512_copiarfila.destroy
+call super::destroy
+end on
+
+type m975513_copiartodo from m_mbase`m975513_copiartodo within m9755_detalle_adicional
+end type
+
+on m975513_copiartodo.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975513_copiartodo.destroy
+call super::destroy
+end on
+
+type m_item_01 from m_mbase`m_item_01 within m9755_detalle_adicional
+end type
+
+on m_item_01.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m_item_01.destroy
+call super::destroy
+end on
+
+type m_item_02 from m_mbase`m_item_02 within m9755_detalle_adicional
+end type
+
+on m_item_02.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m_item_02.destroy
+call super::destroy
+end on
+
+type m_item_03 from m_mbase`m_item_03 within m9755_detalle_adicional
+end type
+
+on m_item_03.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m_item_03.destroy
+call super::destroy
+end on
+
+type m975510_item04 from m_mbase`m975510_item04 within m9755_detalle_adicional
+end type
+
+on m975510_item04.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975510_item04.destroy
+call super::destroy
+end on
+
+type m975511_item05 from m_mbase`m975511_item05 within m9755_detalle_adicional
+end type
+
+on m975511_item05.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975511_item05.destroy
+call super::destroy
+end on
+
+type m975512_item06 from m_mbase`m975512_item06 within m9755_detalle_adicional
+end type
+
+on m975512_item06.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975512_item06.destroy
+call super::destroy
+end on
+
+type m975513_item07 from m_mbase`m975513_item07 within m9755_detalle_adicional
+end type
+
+on m975513_item07.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975513_item07.destroy
+call super::destroy
+end on
+
+type m975514_item08 from m_mbase`m975514_item08 within m9755_detalle_adicional
+end type
+
+on m975514_item08.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975514_item08.destroy
+call super::destroy
+end on
+
+type m975515_item09 from m_mbase`m975515_item09 within m9755_detalle_adicional
+end type
+
+on m975515_item09.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975515_item09.destroy
+call super::destroy
+end on
+
+type m975516_item10 from m_mbase`m975516_item10 within m9755_detalle_adicional
+end type
+
+on m975516_item10.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m975516_item10.destroy
+call super::destroy
+end on
+
+type m99_salir from m_mbase`m99_salir within m_menu_seguridad
+end type
+
+on m99_salir.create
+call super::create
+this.menutitles = true
+this.toolbargradient = false
+this.bitmapgradient = true
+end on
+
+on m99_salir.destroy
+call super::destroy
+end on
+
+type m1050_configurargraficos from menu within m10_sistema
+end type
+
+on m1050_configurargraficos.create
+call super::create
+this.visible = false
+this.text = "Configurar Gráficos"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m1050_configurargraficos.destroy
+call super::destroy
+end on
+
+event clicked;Str_Arg lstr_Arg
+ 
+lstr_Arg.m  		= This
+lstr_Arg.s[1]  	= "w_grafico"
+uf_abrir_opcion(lstr_Arg)
+end event
+
+type m20_configuración from menu within m_menu_seguridad
+m2005_servidores m2005_servidores
+m2015_accesoaservidores m2015_accesoaservidores
+m2025_basededatos m2025_basededatos
+m2050_vistas m2050_vistas
+m2060_aplicaciones m2060_aplicaciones
+m2075_perfiles m2075_perfiles
+m2095_plantilladeaccesoperfil m2095_plantilladeaccesoperfil
+m2096_correos m2096_correos
+m2097_div m2097_div
+m2100_administraciondeusuarios m2100_administraciondeusuarios
+m2105_solicituddeusuarios m2105_solicituddeusuarios
+end type
+
+on m20_configuración.create
+call super::create
+this.tag = "Configuración"
+this.text = "Configuración"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+this.m2005_servidores=create m2005_servidores
+this.m2015_accesoaservidores=create m2015_accesoaservidores
+this.m2025_basededatos=create m2025_basededatos
+this.m2050_vistas=create m2050_vistas
+this.m2060_aplicaciones=create m2060_aplicaciones
+this.m2075_perfiles=create m2075_perfiles
+this.m2095_plantilladeaccesoperfil=create m2095_plantilladeaccesoperfil
+this.m2096_correos=create m2096_correos
+this.m2097_div=create m2097_div
+this.m2100_administraciondeusuarios=create m2100_administraciondeusuarios
+this.m2105_solicituddeusuarios=create m2105_solicituddeusuarios
+this.Item[UpperBound(this.Item)+1]=this.m2005_servidores
+this.Item[UpperBound(this.Item)+1]=this.m2015_accesoaservidores
+this.Item[UpperBound(this.Item)+1]=this.m2025_basededatos
+this.Item[UpperBound(this.Item)+1]=this.m2050_vistas
+this.Item[UpperBound(this.Item)+1]=this.m2060_aplicaciones
+this.Item[UpperBound(this.Item)+1]=this.m2075_perfiles
+this.Item[UpperBound(this.Item)+1]=this.m2095_plantilladeaccesoperfil
+this.Item[UpperBound(this.Item)+1]=this.m2096_correos
+this.Item[UpperBound(this.Item)+1]=this.m2097_div
+this.Item[UpperBound(this.Item)+1]=this.m2100_administraciondeusuarios
+this.Item[UpperBound(this.Item)+1]=this.m2105_solicituddeusuarios
+end on
+
+on m20_configuración.destroy
+call super::destroy
+destroy(this.m2005_servidores)
+destroy(this.m2015_accesoaservidores)
+destroy(this.m2025_basededatos)
+destroy(this.m2050_vistas)
+destroy(this.m2060_aplicaciones)
+destroy(this.m2075_perfiles)
+destroy(this.m2095_plantilladeaccesoperfil)
+destroy(this.m2096_correos)
+destroy(this.m2097_div)
+destroy(this.m2100_administraciondeusuarios)
+destroy(this.m2105_solicituddeusuarios)
+end on
+
+type m2005_servidores from menu within m20_configuración
+end type
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = "w_tv_unidadnegocio_servidores" 
+uf_abrir_opcion(lstr_Arg)
+
+
+
+end event
+
+on m2005_servidores.create
+call super::create
+this.tag = "Configuración de servidores"
+this.text = "Servidores"
+this.toolbaritemname = "structure!"
+this.toolbaritemdownname = "Structure!"
+this.toolbaritemtext = "Servidores"
+this.menuimage = "Structure!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2005_servidores.destroy
+call super::destroy
+end on
+
+type m2015_accesoaservidores from menu within m20_configuración
+end type
+
+on m2015_accesoaservidores.create
+call super::create
+this.tag = "Accesos a servidor por usuario"
+this.text = "Acceso a servidores"
+this.menuimage = "DeclareProcedure!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2015_accesoaservidores.destroy
+call super::destroy
+end on
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = "w_usuario_servidor" 
+uf_abrir_opcion(lstr_Arg)
+
+
+end event
+
+type m2025_basededatos from menu within m20_configuración
+end type
+
+on m2025_basededatos.create
+call super::create
+this.tag = "Configuración de base de datos"
+this.text = "Base de Datos"
+this.menuimage = "SelectTable!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2025_basededatos.destroy
+call super::destroy
+end on
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = 'w_basedatos'
+uf_abrir_opcion(lstr_Arg)
+
+
+end event
+
+type m2050_vistas from menu within m20_configuración
+end type
+
+on m2050_vistas.create
+call super::create
+this.tag = "Vistas"
+this.text = "Vistas"
+this.menuimage = "Custom062!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2050_vistas.destroy
+call super::destroy
+end on
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = 'w_basedatos_vista'
+uf_abrir_opcion(lstr_Arg)
+
+
+end event
+
+type m2060_aplicaciones from menu within m20_configuración
+end type
+
+on m2060_aplicaciones.create
+call super::create
+this.tag = "Configuración de aplicaciones"
+this.text = "Aplicaciones"
+this.toolbaritemname = "createruntime!"
+this.toolbaritemdownname = "CreateRuntime!"
+this.toolbaritemtext = "Aplicaciones"
+this.menuimage = "CreateRuntime!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2060_aplicaciones.destroy
+call super::destroy
+end on
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = "w_aplicaciones" 
+
+uf_abrir_opcion(lstr_Arg)
+
+
+
+end event
+
+type m2075_perfiles from menu within m20_configuración
+end type
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = "w_aplicacion_perfil_menu"
+uf_abrir_opcion(lstr_Arg)
+
+end event
+
+on m2075_perfiles.create
+call super::create
+this.tag = "Configuración de perfiles"
+this.text = "Perfiles"
+this.menuimage = "Custom076!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2075_perfiles.destroy
+call super::destroy
+end on
+
+type m2095_plantilladeaccesoperfil from menu within m20_configuración
+end type
+
+on m2095_plantilladeaccesoperfil.create
+call super::create
+this.tag = "Plantilla de acceso por perfil"
+this.text = "Plantilla de acceso perfil"
+this.menuimage = "RunToCursor!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2095_plantilladeaccesoperfil.destroy
+call super::destroy
+end on
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = "w_acceso_plantilla_roles"
+uf_abrir_opcion(lstr_Arg)
+end event
+
+type m2096_correos from menu within m20_configuración
+end type
+
+event clicked;Str_Arg lstr_Arg
+ 
+lstr_Arg.m  		= This
+lstr_Arg.s[1]  	= "w_configuracion_correo"
+uf_abrir_opcion(lstr_Arg)
+end event
+
+on m2096_correos.create
+call super::create
+this.tag = "Configuración de correos"
+this.text = "Correos"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2096_correos.destroy
+call super::destroy
+end on
+
+type m2097_div from menu within m20_configuración
+end type
+
+on m2097_div.create
+call super::create
+this.text = "-"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2097_div.destroy
+call super::destroy
+end on
+
+type m2100_administraciondeusuarios from menu within m20_configuración
+end type
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  			= This
+lstr_Arg.s[1]   		= "w_usuarios"
+lstr_Arg.tipollamado = 'M'
+uf_abrir_opcion(lstr_Arg)
+
+ 
+end event
+
+on m2100_administraciondeusuarios.create
+call super::create
+this.tag = "Administración de usuarios"
+this.text = "Administración de usuarios"
+this.toolbaritemname = "run!"
+this.toolbaritemdownname = "SelectAndRun!"
+this.toolbaritemtext = "Usuarios"
+this.menuimage = "Run!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2100_administraciondeusuarios.destroy
+call super::destroy
+end on
+
+type m2105_solicituddeusuarios from menu within m20_configuración
+end type
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = "w_solicitudusuario" 
+uf_abrir_opcion(lstr_Arg)
+end event
+
+on m2105_solicituddeusuarios.create
+call super::create
+this.tag = "Solicitud de usuarios"
+this.text = "Solicitud de usuarios"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m2105_solicituddeusuarios.destroy
+call super::destroy
+end on
+
+type m30_operaciones from menu within m_menu_seguridad
+m3005_desbloquearusuarios m3005_desbloquearusuarios
+m3015_configuraciónprocesoactualizacion m3015_configuraciónprocesoactualizacion
+m3025_reasignaciónpermisosporbd m3025_reasignaciónpermisosporbd
+m3035_plandedisponibilidad m3035_plandedisponibilidad
+end type
+
+on m30_operaciones.create
+call super::create
+this.text = "Operaciones"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+this.m3005_desbloquearusuarios=create m3005_desbloquearusuarios
+this.m3015_configuraciónprocesoactualizacion=create m3015_configuraciónprocesoactualizacion
+this.m3025_reasignaciónpermisosporbd=create m3025_reasignaciónpermisosporbd
+this.m3035_plandedisponibilidad=create m3035_plandedisponibilidad
+this.Item[UpperBound(this.Item)+1]=this.m3005_desbloquearusuarios
+this.Item[UpperBound(this.Item)+1]=this.m3015_configuraciónprocesoactualizacion
+this.Item[UpperBound(this.Item)+1]=this.m3025_reasignaciónpermisosporbd
+this.Item[UpperBound(this.Item)+1]=this.m3035_plandedisponibilidad
+end on
+
+on m30_operaciones.destroy
+call super::destroy
+destroy(this.m3005_desbloquearusuarios)
+destroy(this.m3015_configuraciónprocesoactualizacion)
+destroy(this.m3025_reasignaciónpermisosporbd)
+destroy(this.m3035_plandedisponibilidad)
+end on
+
+type m3005_desbloquearusuarios from menu within m30_operaciones
+end type
+
+event clicked;Open(w_desbloqueo_usuario )
+end event
+
+on m3005_desbloquearusuarios.create
+call super::create
+this.tag = "Bloqueo / Desbloqueo usuarios"
+this.text = "Bloqueo / Desbloqueo usuarios"
+this.toolbaritemname = "createforeignkey!"
+this.toolbaritemdownname = "CreateForeignKey!"
+this.toolbaritemtext = "Desbloquear"
+this.toolbaritemspace = 1
+this.menuimage = "CreateForeignKey!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m3005_desbloquearusuarios.destroy
+call super::destroy
+end on
+
+type m3015_configuraciónprocesoactualizacion from menu within m30_operaciones
+end type
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = "w_controlestado_usuario" 
+uf_abrir_opcion(lstr_Arg)
+
+
+end event
+
+on m3015_configuraciónprocesoactualizacion.create
+call super::create
+this.tag = "Configuración proceso de actualizacion de estados"
+this.text = "Configuración proceso de actualizacion de estados"
+this.menuimage = "Custom038!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m3015_configuraciónprocesoactualizacion.destroy
+call super::destroy
+end on
+
+type m3025_reasignaciónpermisosporbd from menu within m30_operaciones
+end type
+
+event clicked;Open(w_asignacion_usuario_bd)
+
+
+end event
+
+on m3025_reasignaciónpermisosporbd.create
+call super::create
+this.tag = "Reasignación permisos por BD"
+this.text = "Reasignación permisos por BD"
+this.menuimage = "Regenerate5!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m3025_reasignaciónpermisosporbd.destroy
+call super::destroy
+end on
+
+type m3035_plandedisponibilidad from menu within m30_operaciones
+end type
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = "w_plan_disponiblidad" 
+uf_abrir_opcion(lstr_Arg)
+end event
+
+on m3035_plandedisponibilidad.create
+call super::create
+this.tag = "Operación con Servidor"
+this.text = "Operación con Servidor"
+this.menuimage = "DeclareProcedure!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m3035_plandedisponibilidad.destroy
+call super::destroy
+end on
+
+type m40_consultas from menu within m_menu_seguridad
+m4010_consultadeusuarios m4010_consultadeusuarios
+m4015_consultadeunidadesporusuario m4015_consultadeunidadesporusuario
+m4020_consultaperfilusuarios m4020_consultaperfilusuarios
+m4030_accesoaplicacion m4030_accesoaplicacion
+m4040_accesosporaplicacionusuario m4040_accesosporaplicacionusuario
+m4045_listadodesolicitudesdeusuario m4045_listadodesolicitudesdeusuario
+m_4050div m_4050div
+m4060_auditoriadeiniciosdesesion m4060_auditoriadeiniciosdesesion
+m4070_auditoriadeconfiguracionporusuario m4070_auditoriadeconfiguracionporusuario
+end type
+
+on m40_consultas.create
+call super::create
+this.tag = "Consultas"
+this.text = "Consultas"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+this.m4010_consultadeusuarios=create m4010_consultadeusuarios
+this.m4015_consultadeunidadesporusuario=create m4015_consultadeunidadesporusuario
+this.m4020_consultaperfilusuarios=create m4020_consultaperfilusuarios
+this.m4030_accesoaplicacion=create m4030_accesoaplicacion
+this.m4040_accesosporaplicacionusuario=create m4040_accesosporaplicacionusuario
+this.m4045_listadodesolicitudesdeusuario=create m4045_listadodesolicitudesdeusuario
+this.m_4050div=create m_4050div
+this.m4060_auditoriadeiniciosdesesion=create m4060_auditoriadeiniciosdesesion
+this.m4070_auditoriadeconfiguracionporusuario=create m4070_auditoriadeconfiguracionporusuario
+this.Item[UpperBound(this.Item)+1]=this.m4010_consultadeusuarios
+this.Item[UpperBound(this.Item)+1]=this.m4015_consultadeunidadesporusuario
+this.Item[UpperBound(this.Item)+1]=this.m4020_consultaperfilusuarios
+this.Item[UpperBound(this.Item)+1]=this.m4030_accesoaplicacion
+this.Item[UpperBound(this.Item)+1]=this.m4040_accesosporaplicacionusuario
+this.Item[UpperBound(this.Item)+1]=this.m4045_listadodesolicitudesdeusuario
+this.Item[UpperBound(this.Item)+1]=this.m_4050div
+this.Item[UpperBound(this.Item)+1]=this.m4060_auditoriadeiniciosdesesion
+this.Item[UpperBound(this.Item)+1]=this.m4070_auditoriadeconfiguracionporusuario
+end on
+
+on m40_consultas.destroy
+call super::destroy
+destroy(this.m4010_consultadeusuarios)
+destroy(this.m4015_consultadeunidadesporusuario)
+destroy(this.m4020_consultaperfilusuarios)
+destroy(this.m4030_accesoaplicacion)
+destroy(this.m4040_accesosporaplicacionusuario)
+destroy(this.m4045_listadodesolicitudesdeusuario)
+destroy(this.m_4050div)
+destroy(this.m4060_auditoriadeiniciosdesesion)
+destroy(this.m4070_auditoriadeconfiguracionporusuario)
+end on
+
+type m4010_consultadeusuarios from menu within m40_consultas
+end type
+
+on m4010_consultadeusuarios.create
+call super::create
+this.tag = "Listado de Usuarios"
+this.text = "Listado de usuarios"
+this.menuimage = "Run!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m4010_consultadeusuarios.destroy
+call super::destroy
+end on
+
+event clicked;Str_Arg lstr_Arg
+
+lstr_Arg.m  					=  This
+lstr_Arg.usarfiltro			=	False
+lstr_arg.tipo 				= 1 //Tipo1=DW , Tipo2=DS
+lstr_Arg.tipollamado		=	'M'
+lstr_arg.entidad			=  "Usuarios"
+lstr_Arg.maximizar		=	True
+lstr_arg.titulo 				=  "Consulta de usuarios" // Título del reporte
+lstr_arg.dataobject 		=  "dw_consulta_usuario_2" //dw del reporte a visualizar
+//lstr_Arg.nargumentos		=  0
+
+lstr_Arg.s[1]  				= "w_consulta_filtro_seguridad" 
+lstr_Arg.b[1]				=	True
+//lstr_Arg.a[1]				= gi_idservidor
+
+uf_abrir_opcion(lstr_Arg)
+
+
+end event
+
+type m4015_consultadeunidadesporusuario from menu within m40_consultas
+end type
+
+event clicked;Str_Arg lstr_Arg
+
+lstr_Arg.m  					=  This
+lstr_Arg.usarfiltro			=	False
+lstr_arg.tipo 				= 1 //Tipo1=DW , Tipo2=DS
+lstr_Arg.tipollamado		=	'M'
+lstr_arg.entidad			=  "UnidadesUsuario"
+lstr_Arg.maximizar		=	True
+lstr_arg.titulo 				=  "Consulta de unidades por usuario" // Título del reporte
+lstr_arg.dataobject 		=  "dw_consulta_usuario_unidades" //dw del reporte a visualizar
+//lstr_Arg.nargumentos		=  0
+
+lstr_Arg.s[1]  				= "w_consulta_filtro_seguridad" 
+lstr_Arg.b[1]				=	True
+//lstr_Arg.a[1]				= gi_idservidor
+
+uf_abrir_opcion(lstr_Arg)
+
+
+end event
+
+on m4015_consultadeunidadesporusuario.create
+call super::create
+this.tag = "Listado de unidades por usuario"
+this.text = "Listado de unidades por usuario"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m4015_consultadeunidadesporusuario.destroy
+call super::destroy
+end on
+
+type m4020_consultaperfilusuarios from menu within m40_consultas
+end type
+
+on m4020_consultaperfilusuarios.create
+call super::create
+this.tag = "LISTA USUARIOS POR  PERFIL"
+this.text = "Lista de usuarios por perfil"
+this.menuimage = "TreeView!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m4020_consultaperfilusuarios.destroy
+call super::destroy
+end on
+
+event clicked;Str_Arg lstr_Arg
+
+lstr_Arg.m  					=  This
+lstr_Arg.usarfiltro			=	True
+lstr_arg.tipo 				= 1 //Tipo1=DW , Tipo2=DS
+lstr_Arg.tipollamado		=	'M'
+lstr_arg.entidad			=  "PefilUsuarios"
+lstr_Arg.maximizar		=	True
+lstr_arg.titulo 				=  "Consulta de perfil por usuario" // Título del reporte
+lstr_arg.dataobject_filtro =  "dwe_filtro_usuario_aplicacion" //dw filtro del reporte
+lstr_arg.dataobject 		=  "dw_consulta_usuario_perfil" //dw del reporte a visualizar
+lstr_Arg.nargumentos		=  1
+
+lstr_Arg.s[1]  				= "w_consulta_filtro_seguridad" 
+lstr_Arg.b[1]				=	True
+lstr_Arg.a[1]				= 0
+
+uf_abrir_opcion(lstr_Arg)
+
+end event
+
+type m4030_accesoaplicacion from menu within m40_consultas
+end type
+
+on m4030_accesoaplicacion.create
+call super::create
+this.tag = "CONFIGURACIÓN DE MENÚS POR PERFIL"
+this.text = "Configuarción de menús por perfil"
+this.menuimage = "ArrangeTables!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m4030_accesoaplicacion.destroy
+call super::destroy
+end on
+
+event clicked;Str_Arg lstr_Arg
+
+lstr_Arg.m  					=  This
+lstr_Arg.usarfiltro			=	True
+lstr_arg.tipo 				= 3 //Tipo1=DW , Tipo2=DS , Tipo3=SP
+lstr_Arg.tipollamado		=	'M'
+lstr_arg.entidad			=  "OpcionesPerfil"
+lstr_Arg.maximizar		=	True
+lstr_arg.titulo 				=  "Consulta de opciones por perfil" // Título del reporte
+lstr_arg.dataobject_filtro =  "dwe_filtro_usuario_aplicacion" //dw filtro del reporte
+//lstr_arg.dataobject 		=  "dw_consulta_usuario_perfil" //dw del reporte a visualizar
+lstr_arg.uspnombre		=	"Seguridad.usp_Reporte_Menu_Perfil_SintaxisData"
+lstr_Arg.nargumentos		=  1
+
+lstr_Arg.s[1]  				= "w_consulta_filtro_seguridad" 
+lstr_Arg.b[1]				=	True
+lstr_Arg.a[1]				= 0
+
+lstr_Arg.s[10]  				= "idservidor" 
+lstr_Arg.s[11]  				= "idaplicacion" 
+
+uf_abrir_opcion(lstr_Arg)
+end event
+
+type m4040_accesosporaplicacionusuario from menu within m40_consultas
+end type
+
+event clicked;DateTime	ldt_fechaactual
+Date		id_desde
+Date  		id_hasta
+
+Str_Arg lstr_Arg
+
+sqlca.uf_usp_fechahora_select(ldt_fechaactual)
+
+id_desde		=	Date(ldt_fechaactual)
+id_hasta		=	Date(ldt_fechaactual)
+
+lstr_Arg.m  					=  This
+lstr_Arg.usarfiltro			=	True
+lstr_arg.tipo 				= 3 //Tipo1=DW , Tipo2=DS , Tipo3=SP
+lstr_Arg.tipollamado		=	'M'
+lstr_arg.entidad			=  "AccesosApp"
+lstr_Arg.maximizar		=	True
+lstr_arg.titulo 				=  "Consulta accesos por aplicacion" // Título del reporte
+lstr_arg.dataobject_filtro =  "dwe_filtro_uso_sistema_usuario" //dw filtro del reporte
+//lstr_arg.dataobject 		=  "dw_consulta_usuario_perfil" //dw del reporte a visualizar
+lstr_arg.uspnombre		=	"Seguridad.usp_UsoSistemaUsuario_DWSintaxis"
+lstr_Arg.nargumentos		=  4
+
+lstr_Arg.s[1]  				= "w_consulta_filtro_seguridad" 
+lstr_Arg.b[1]				=	True
+lstr_Arg.a[1]				= 1
+lstr_Arg.a[2]				= 0
+lstr_Arg.a[3]				= id_desde
+lstr_Arg.a[4]				= id_hasta
+
+lstr_Arg.s[10]  				= "Tipo" 
+lstr_Arg.s[11]  				= "idaplicacion" 
+lstr_Arg.s[12]  				= "desde" 
+lstr_Arg.s[13]  				= "hasta" 
+
+
+uf_abrir_opcion(lstr_Arg)
+
+end event
+
+on m4040_accesosporaplicacionusuario.create
+call super::create
+this.tag = "ACCESOS POR APLICACIÓN/USUARIO"
+this.text = "Accesos por Aplicación/Usuario"
+this.menuimage = "DataManip1!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m4040_accesosporaplicacionusuario.destroy
+call super::destroy
+end on
+
+type m4045_listadodesolicitudesdeusuario from menu within m40_consultas
+end type
+
+event clicked;DateTime	ldt_fechaactual
+Date		id_desde
+Date  		id_hasta
+
+Str_Arg lstr_Arg
+
+sqlca.uf_usp_fechahora_select(ldt_fechaactual)
+
+id_desde		=	Date(ldt_fechaactual)
+id_hasta		=	Date(ldt_fechaactual)
+
+lstr_Arg.m  					=  This
+lstr_Arg.usarfiltro			=	True
+lstr_arg.tipo 				= 1 //Tipo1=DW , Tipo2=DS
+lstr_Arg.tipollamado		=	'M'
+lstr_arg.entidad			=  "SolicitudesUsuario"
+lstr_Arg.maximizar		=	True
+lstr_arg.titulo 				=  "Consulta de Solicitudes de usuario" // Título del reporte
+lstr_arg.dataobject_filtro =  "dwe_filtro_fechas_solicitud"      //"dwe_filtro_usuario_aplicacion" //dw filtro del reporte
+lstr_arg.dataobject 		=  "dw_consulta_solicitud_usuario_modulo" //dw del reporte a visualizar"
+lstr_Arg.nargumentos		=  2
+
+lstr_Arg.s[1]  				= "w_consulta_filtro_seguridad" 
+
+lstr_Arg.a[1]				= id_desde
+lstr_Arg.a[2]				= id_hasta
+//lstr_Arg.a[3]				= 1
+
+
+uf_abrir_opcion(lstr_Arg)
+
+
+
+
+
+
+end event
+
+on m4045_listadodesolicitudesdeusuario.create
+call super::create
+this.tag = "Listado de Solicitudes de usuario"
+this.text = "Listado de Solicitudes de usuario"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m4045_listadodesolicitudesdeusuario.destroy
+call super::destroy
+end on
+
+type m_4050div from menu within m40_consultas
+end type
+
+on m_4050div.create
+call super::create
+this.text = "-"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m_4050div.destroy
+call super::destroy
+end on
+
+type m4060_auditoriadeiniciosdesesion from menu within m40_consultas
+end type
+
+event clicked;Str_Arg	lstr_Arg
+lstr_Arg.m  = This
+lstr_Arg.s[1]   = "w_usuario_auditoria" 
+uf_abrir_opcion(lstr_Arg)
+
+end event
+
+on m4060_auditoriadeiniciosdesesion.create
+call super::create
+this.tag = "Auditoría de Inicios de Sesión"
+this.text = "Auditoría de inicios de sesión"
+this.menuimage = "EditObject!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m4060_auditoriadeiniciosdesesion.destroy
+call super::destroy
+end on
+
+type m4070_auditoriadeconfiguracionporusuario from menu within m40_consultas
+end type
+
+event clicked;DateTime	ldt_fechaactual
+Date		id_desde
+Date  		id_hasta
+
+Str_Arg lstr_Arg
+
+sqlca.uf_usp_fechahora_select(ldt_fechaactual)
+
+id_desde		=	Date(ldt_fechaactual)
+id_hasta		=	Date(ldt_fechaactual)
+
+lstr_Arg.m  					=  This
+lstr_Arg.usarfiltro			=	True
+lstr_arg.tipo 				= 1 //Tipo1=DW , Tipo2=DS
+lstr_Arg.tipollamado		=	'M'
+lstr_arg.entidad			=  "AuditoriaUsuarioSeg"
+lstr_Arg.maximizar		=	True
+lstr_arg.titulo 				=  "Consulta Auditoria SEGURIDAD" // Título del reporte
+lstr_arg.dataobject_filtro =  "dwe_filtro_fechas_estado_usuario"      //"dwe_filtro_usuario_aplicacion" //dw filtro del reporte
+lstr_arg.dataobject 		=  "dw_consulta_usuario_permisos" //dw del reporte a visualizar"
+lstr_Arg.nargumentos		=  2
+
+lstr_Arg.s[1]  				= "w_consulta_filtro_seguridad" 
+
+
+lstr_Arg.a[1]				= id_desde
+lstr_Arg.a[2]				= id_hasta
+//lstr_Arg.a[3]				= 1
+
+
+uf_abrir_opcion(lstr_Arg)
+
+
+
+
+
+
+end event
+
+on m4070_auditoriadeconfiguracionporusuario.create
+call super::create
+this.tag = "Auditoría de Configuración por Usuario"
+this.text = "Auditoría de configuración por usuario"
+this.menuimage = "Where!"
+this.menustyle = contemporarymenu!
+this.menutextcolor = 134217735
+this.menubackcolor = 67108864
+this.menuhighlightcolor = 134217750
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 67108864
+this.menutitles = true
+this.menubitmaps = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.bitmapgradient = true
+end on
+
+on m4070_auditoriadeconfiguracionporusuario.destroy
+call super::destroy
+end on
+

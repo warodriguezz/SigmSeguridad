@@ -1,0 +1,12 @@
+﻿$PBExportHeader$str_busqueda.srs
+global type str_busqueda from structure
+	string		s_datawin
+	boolean		b_secuencial
+	string		s_columna
+	integer		i_arg
+	string		s_argumentos[]
+	datawindow		dw_datawin
+	string		s_tipobusca
+	uo_dwbase		uodw_datawin
+end type
+

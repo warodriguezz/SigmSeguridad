@@ -1,0 +1,20 @@
+﻿$PBExportHeader$f_servidor_disponible.srf
+global type f_servidor_disponible from function_object
+end type
+
+forward prototypes
+global function integer f_servidor_disponible (string as_servidor, string as_servidorlinked)
+end prototypes
+
+global function integer f_servidor_disponible (string as_servidor, string as_servidorlinked);Integer	li_disponible=0
+String		ls_ret
+String		ls_parametros
+
+ls_parametros	=	"'"+as_servidor+"','"+as_servidorlinked+"'"
+ls_ret	=	gf_objetobd_ejecutar(SQLCA,"Seguridad.ufn_ValidarServidor",ls_parametros)  
+If ls_ret = "SQL:-1" Then 
+	Return -1
+End if
+Return Integer(ls_ret)
+end function
+
