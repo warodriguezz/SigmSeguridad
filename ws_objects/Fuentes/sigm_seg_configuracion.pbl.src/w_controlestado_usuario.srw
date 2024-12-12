@@ -6,12 +6,15 @@ type dw_filtro_servidor from uo_filtro_servidor_usuario within w_controlestado_u
 end type
 type cb_1 from commandbutton within w_controlestado_usuario
 end type
+type st_1 from statictext within w_controlestado_usuario
+end type
 end forward
 
 global type w_controlestado_usuario from w_base
 integer ii_modoventana = 2
 dw_filtro_servidor dw_filtro_servidor
 cb_1 cb_1
+st_1 st_1
 end type
 global w_controlestado_usuario w_controlestado_usuario
 
@@ -39,15 +42,18 @@ int iCurrent
 call super::create
 this.dw_filtro_servidor=create dw_filtro_servidor
 this.cb_1=create cb_1
+this.st_1=create st_1
 iCurrent=UpperBound(this.Control)
 this.Control[iCurrent+1]=this.dw_filtro_servidor
 this.Control[iCurrent+2]=this.cb_1
+this.Control[iCurrent+3]=this.st_1
 end on
 
 on w_controlestado_usuario.destroy
 call super::destroy
 destroy(this.dw_filtro_servidor)
 destroy(this.cb_1)
+destroy(this.st_1)
 end on
 
 event ue_grabar_pre;call super::ue_grabar_pre;//if  dw_principal.event ue_validar() < 0 then return  -1
@@ -318,4 +324,22 @@ event clicked;String		ls_ret
 ls_ret=gf_objetobd_ejecutar(SQLCA,"Seguridad.usp_DeshabilitarUsuario_fechaCese","")
 
 end event
+
+type st_1 from statictext within w_controlestado_usuario
+integer x = 3173
+integer y = 96
+integer width = 402
+integer height = 64
+boolean bringtotop = true
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+long textcolor = 33554432
+long backcolor = 67108864
+string text = "asasasas"
+boolean focusrectangle = false
+end type
 

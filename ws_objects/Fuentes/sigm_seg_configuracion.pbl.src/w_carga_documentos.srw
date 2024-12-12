@@ -508,7 +508,7 @@ end type
 type st_1 from statictext within w_carga_documentos
 integer x = 1774
 integer y = 836
-integer width = 443
+integer width = 530
 integer height = 64
 boolean bringtotop = true
 integer textsize = -10
@@ -519,7 +519,7 @@ fontfamily fontfamily = swiss!
 string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 67108864
-string text = "TExto de pruena"
+string text = "Texto de pruena"
 boolean focusrectangle = false
 end type
 
