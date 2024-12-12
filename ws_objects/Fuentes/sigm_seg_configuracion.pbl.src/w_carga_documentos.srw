@@ -4,6 +4,8 @@ global type w_carga_documentos from w_response_mtto
 end type
 type st_titulo from statictext within w_carga_documentos
 end type
+type st_1 from statictext within w_carga_documentos
+end type
 end forward
 
 global type w_carga_documentos from w_response_mtto
@@ -11,6 +13,7 @@ integer width = 3666
 integer height = 1060
 string title = "Subida Documentos"
 st_titulo st_titulo
+st_1 st_1
 end type
 global w_carga_documentos w_carga_documentos
 
@@ -152,13 +155,16 @@ on w_carga_documentos.create
 int iCurrent
 call super::create
 this.st_titulo=create st_titulo
+this.st_1=create st_1
 iCurrent=UpperBound(this.Control)
 this.Control[iCurrent+1]=this.st_titulo
+this.Control[iCurrent+2]=this.st_1
 end on
 
 on w_carga_documentos.destroy
 call super::destroy
 destroy(this.st_titulo)
+destroy(this.st_1)
 end on
 
 event open;call super::open;is_extensionsblock='comexedllsysini'
@@ -496,6 +502,24 @@ boolean underline = true
 long textcolor = 255
 long backcolor = 67108864
 string text = "Titulo"
+boolean focusrectangle = false
+end type
+
+type st_1 from statictext within w_carga_documentos
+integer x = 1774
+integer y = 836
+integer width = 443
+integer height = 64
+boolean bringtotop = true
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+long textcolor = 33554432
+long backcolor = 67108864
+string text = "TExto de pruena"
 boolean focusrectangle = false
 end type
 
